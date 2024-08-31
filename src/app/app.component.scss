@@ -1,12 +1,23 @@
-
 .table-view {
+    position: relative;
+    float: left;
+    min-width: 100%;
+    padding-bottom: 180px;
+    padding-left: 96px;
+    padding-right: 96px;
+    height: 820px;
+    overflow: auto;
     .table-header {
         display: flex;
-        position: sticky;
+
         .table-header__checkbox-container {
+            background: #F9F9FC;
             border-bottom: 1px solid #A9A9CB;
             height: 40px;
+            left: 0px;
+            position: sticky;
             width: 40px;
+
             .checkbox {
                 padding: 8px 16px 8px 8px;
                 width: 16px;
@@ -14,11 +25,12 @@
         }
 
         .table-header__freeze-columns {
-            background: white;
+            background: #F9F9FC;
             border-bottom: 1px solid #A9A9CB;
             display: flex;
+            height: 40px;
+            left: 40px;
             position: sticky;
-            left: 32px;
             z-index: 1;
 
             .freeze-column__content {
@@ -29,23 +41,28 @@
                 font-size: 12px;
                 flex-wrap: nowrap;
                 text-wrap: nowrap;
+                width: 120px;
 
-                .reorder-header-icon {
-
-                }
+                .reorder-header-icon {}
             }
         }
 
         .table-header__standard-columns {
             display: flex;
+            height: 40px;
+            border-bottom: 1px solid #A9A9CB;
+
             .table-column {
-                border-bottom: 1px solid #A9A9CB;
                 .table-column-content {
+                    flex-wrap: nowrap;
+                    text-wrap: nowrap;
                     padding: 11px 8px;
                     display: flex;
                     gap: 4px;
                     color: #5A5A81;
                     font-size: 12px;
+                    width: 120px;
+
                 }
             }
         }
@@ -58,39 +75,32 @@
 
     .table-content {
         display: flex;
-        
-        .table-content__checkbox-container {
-            border-bottom: 1px solid #A9A9CB;
-            height: 40px;
-            width: 40px;
-            .checkbox {
-                padding: 8px 16px 8px 8px;
-                width: 16px;
-            }
-        }
-        .table-content__freeze-columns {
-            border-bottom: 1px solid #A9A9CB;
-            display: flex;
-            position: st;
-            .freeze-column__content {
-                flex-wrap: nowrap;
-                text-wrap: nowrap;
-                padding: 11px 8px;
-                display: flex;
-                gap: 4px;
-                color: #5A5A81;
-                font-size: 12px;
+        flex-direction: column;
+        .table-row {
+        display: flex;
 
-                .reorder-header-icon {
-
+            .table-row__checkbox-container {
+                background: #F9F9FC;
+                border-bottom: 1px solid #A9A9CB;
+                height: 40px;
+                left: 0;
+                position: sticky;
+                width: 40px;
+                
+                .checkbox {
+                    padding: 8px 16px 8px 8px;
+                    width: 16px;
                 }
             }
-        }
-        .table-content__standard-rows {
-            display: flex;
-            .table-cell {
+            
+            .table-content__freeze-columns {
+                background: #F9F9FC;
                 border-bottom: 1px solid #A9A9CB;
-                .table-cell-content {
+                display: flex;
+                position: sticky;
+                left: 40px;
+                
+                .freeze-column__content {
                     flex-wrap: nowrap;
                     text-wrap: nowrap;
                     padding: 11px 8px;
@@ -98,16 +108,41 @@
                     gap: 4px;
                     color: #5A5A81;
                     font-size: 12px;
+                    width: 120px;
+                    
+                    .reorder-header-icon {}
                 }
             }
-        }
-        .table-content__row-actions {
-            border-bottom: 1px solid #A9A9CB;
-            display: flex;
-            justify-content: center;
-            width: 60px;
-            .row-actions__container {
+            
+            .table-row__content {
                 display: flex;
+                
+                .table-cell {
+                    border-bottom: 1px solid #A9A9CB;
+                    
+                    .table-cell-content {
+                        flex-wrap: nowrap;
+                        text-wrap: nowrap;
+                        padding: 11px 8px;
+                        display: flex;
+                        gap: 4px;
+                        color: #5A5A81;
+                        font-size: 12px;
+                    width: 120px;
+
+                    }
+                }
+            }
+            
+            .table-content__row-actions {
+                border-bottom: 1px solid #A9A9CB;
+                display: flex;
+                justify-content: center;
+                width: 60px;
+                
+                .row-actions__container {
+                    display: flex;
+                }
             }
         }
     }

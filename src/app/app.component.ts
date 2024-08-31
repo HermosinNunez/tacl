@@ -12,6 +12,6 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'pruebasEstilados';
 
-  columnas = [...Array(30).keys()];
-  filas = [...Array(30).keys()];
+  columnas = [...Array(20).keys()];
+  filas = [...Array(20).keys()];
 }

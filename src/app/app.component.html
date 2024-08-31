@@ -14,8 +14,8 @@
         </div>
         <div class="sombra-sticky"></div>
       </div>
-      <div *ngFor="let columna of columnas" class="table-header__standard-columns">
-        <div class="table-column">
+      <div class="table-header__standard-columns">
+        <div *ngFor="let columna of columnas" class="table-column">
           <div class="table-column-content">
             Columna {{columna}}
           </div>
@@ -24,29 +24,31 @@
       <div class="table-header__more-actions-column"></div>
     </div>
     <!--FILAS-->
-    <div class="table-content" *ngFor=" let fila of filas">
-      <div class="table-content__checkbox-container">
-        <div class="checkbox">
-          <input type="checkbox">
-        </div>
-      </div>
-      <div class="table-content__freeze-columns">
-        <div class="freeze-column__content">
-          <div>Celda freeze {{fila}}</div>
-          <div class="reorder-header-icon"><i>v</i></div>
-        </div>
-        <div class="sombra-sticky"></div>
-      </div>
-      <div *ngFor="let columna of columnas" class="table-content__standard-rows">
-        <div class="table-cell">
-          <div class="table-cell-content">
-            Celda  {{columna}}-{{fila}}
+    <div class="table-content">
+      <div class="table-row" *ngFor=" let fila of filas">
+        <div class="table-row__checkbox-container">
+          <div class="checkbox">
+            <input type="checkbox">
           </div>
         </div>
-      </div>
-      <div class="table-content__row-actions">
-        <div class="row-actions__container">
-          <button></button>
+        <div class="table-content__freeze-columns">
+          <div class="freeze-column__content">
+            <div>Celda freeze {{fila}}</div>
+            <div class="reorder-header-icon"><i>v</i></div>
+          </div>
+          <div class="sombra-sticky"></div>
+        </div>
+        <div *ngFor="let columna of columnas" class="table-row__content">
+          <div class="table-cell">
+            <div class="table-cell-content">
+              Celda  {{fila}}-{{columna}}
+            </div>
+          </div>
+        </div>
+        <div class="table-content__row-actions">
+          <div class="row-actions__container">
+            <button></button>
+          </div>
         </div>
       </div>
     </div>

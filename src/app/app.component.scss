@@ -1,0 +1,118 @@
+
+.table-view {
+    .table-header {
+        display: flex;
+        position: sticky;
+        .table-header__checkbox-container {
+            border-bottom: 1px solid #A9A9CB;
+            height: 40px;
+            width: 40px;
+            .checkbox {
+                padding: 8px 16px 8px 8px;
+                width: 16px;
+            }
+        }
+
+        .table-header__freeze-columns {
+            background: white;
+            border-bottom: 1px solid #A9A9CB;
+            display: flex;
+            position: sticky;
+            left: 32px;
+            z-index: 1;
+
+            .freeze-column__content {
+                padding: 11px 8px;
+                display: flex;
+                gap: 4px;
+                color: #5A5A81;
+                font-size: 12px;
+
+                .reorder-header-icon {
+
+                }
+            }
+        }
+
+        .table-header__standard-columns {
+            display: flex;
+            .table-column {
+                border-bottom: 1px solid #A9A9CB;
+                .table-column-content {
+                    padding: 11px 8px;
+                    display: flex;
+                    gap: 4px;
+                    color: #5A5A81;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .table-header__more-actions-column {
+            border-bottom: 1px solid #A9A9CB;
+            width: 60px;
+        }
+    }
+
+    .table-content {
+        display: flex;
+        
+        .table-content__checkbox-container {
+            border-bottom: 1px solid #A9A9CB;
+            height: 40px;
+            width: 40px;
+            .checkbox {
+                padding: 8px 16px 8px 8px;
+                width: 16px;
+            }
+        }
+        .table-content__freeze-columns {
+            border-bottom: 1px solid #A9A9CB;
+            display: flex;
+            position: st;
+            .freeze-column__content {
+                padding: 11px 8px;
+                display: flex;
+                gap: 4px;
+                color: #5A5A81;
+                font-size: 12px;
+
+                .reorder-header-icon {
+
+                }
+            }
+        }
+        .table-content__standard-rows {
+            display: flex;
+            .table-cell {
+                border-bottom: 1px solid #A9A9CB;
+                .table-cell-content {
+                    padding: 11px 8px;
+                    display: flex;
+                    gap: 4px;
+                    color: #5A5A81;
+                    font-size: 12px;
+                }
+            }
+        }
+        .table-content__row-actions {
+            border-bottom: 1px solid #A9A9CB;
+            display: flex;
+            justify-content: center;
+            width: 60px;
+            .row-actions__container {
+                display: flex;
+            }
+        }
+    }
+}
+
+// COMMON
+
+
+.sombra-sticky {
+    width: 5px;
+    margin-left: -3px;
+    margin-top: -1px;
+    background: #D0D0E6;
+}

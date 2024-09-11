@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,9 +9,29 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
+  @ViewChild('tableView') tableView!: ElementRef;
   title = 'pruebasEstilados';
 
-  columnas = [...Array(20).keys()];
-  filas = [...Array(20).keys()];
+  isScrolling: boolean = false;
+  columnas = [...Array(11).keys()];
+  filas = [...Array(15).keys()];
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    const tableView = document.querySelector('.table-view');
+    console.log('scroll')
+    if (tableView) {
+      const scrollLeft = (tableView as HTMLElement).scrollLeft;
+      this.isScrolling = scrollLeft > 0;
+    }
+   }
+
+   ngAfterViewInit() {
+    // Añadir el evento de scroll directamente al contenedor de la tabla
+    this.tableView.nativeElement.addEventListener('scroll', () => {
+      const scrollLeft = this.tableView.nativeElement.scrollLeft;
+      this.isScrolling = scrollLeft > 0;
+    });
+  }
 }

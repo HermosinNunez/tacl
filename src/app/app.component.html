@@ -1,5 +1,5 @@
 <div style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;">
-  <div class="table-view">
+  <div #tableView class="table-view">
     <!--COLUMNAS-->
     <div class="table-header">
       <div class="table-header__checkbox-container" >
@@ -12,7 +12,7 @@
           <div>Columna  1</div>
           <div class="reorder-header-icon"><i>v</i></div>
         </div>
-        <div class="sombra-sticky"></div>
+        <div [ngClass]="{'sombra-visible': isScrolling, 'sombra-hidden': !isScrolling}" class="sombra-sticky"></div>
       </div>
       <div class="table-header__standard-columns">
         <div *ngFor="let columna of columnas" class="table-column">
@@ -36,7 +36,7 @@
             <div>Celda freeze {{fila}}</div>
             <div class="reorder-header-icon"><i>v</i></div>
           </div>
-          <div class="sombra-sticky"></div>
+          <div  [ngClass]="{'sombra-visible': isScrolling, 'sombra-hidden': !isScrolling}" class="sombra-sticky"></div>
         </div>
         <div *ngFor="let columna of columnas" class="table-row__content">
           <div class="table-cell">

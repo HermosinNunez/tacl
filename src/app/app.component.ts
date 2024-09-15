@@ -14,8 +14,8 @@ export class AppComponent implements AfterViewInit{
   title = 'pruebasEstilados';
 
   isScrolling: boolean = false;
-  columnas = [...Array(11).keys()];
-  filas = [...Array(15).keys()];
+  columnas = [...Array(17).keys()];
+  filas = [...Array(35).keys()];
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
